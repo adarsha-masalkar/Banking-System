@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+<table class="table table-striped" style="background-color:#edfffa">
+  <thead>
+    <tr>
+      <th scope="col">Sr No</th>
+      <th scope="col">Name</th>
+      <th scope="col">Balance</th>
+    </tr>
+  </thead>
+  <tbody>
+            {% for user in users%}
+        <tr>
+            <th scope="row">{{ user[0] }}</th>
+                <td>{{ user[1] }}</td>
+                <td>{{ user[2] }}</td>
+        </tr>
+            {% endfor %}
+
+  </tbody>
+</table>
+{% endblock %}

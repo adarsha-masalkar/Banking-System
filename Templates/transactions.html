@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<form method="POST">
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="addon-wrapping">Details</span>
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Sender" aria-label="Sender" aria-describedby="basic-addon1" name="sender">
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Receiver" aria-label="Receiver" aria-describedby="basic-addon1" name="receiver">
+        </div>
+        <div class="col-md-3">
+            <input type="text" class="form-control" placeholder="Amount" aria-label="Amount" aria-describedby="basic-addon1" name="amt">
+        </div>
+
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </div>
+
+</form>
+
+    <table class="table table-striped" style="background-color:#edfffa">
+  <thead>
+    <tr>
+      <th scope="col">Transaction Id</th>
+      <th scope="col">Sender</th>
+      <th scope="col">Receiver</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+            {% for t in transactions %}
+        <tr>
+            <th scope="row">{{ t[0] }}</th>
+                <td>{{ t[1] }}</td>
+                <td>{{ t[2] }}</td>
+                <td>{{ t[3] }}</td>
+        </tr>
+            {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}
